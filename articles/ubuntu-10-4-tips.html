@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Comme vous le savez sûrement, la nouvelle version d&#x27;Ubuntu (10.4 Lucid Lynx) est sortie depuis peu. (Youpi !) Avant que sorte cette nouvelle mouture j&#x27;avais un serveur personnel qui tournait sur la 9.10 (Karmic Koala). J&#x27;ai aussi eu…">
+    <title>Ubuntu 10.4 Tips | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">8 mai 2010</p>
+    <h1>Ubuntu 10.4 Tips</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciels</span> <span class="tag">Open Source</span></div>
+  </header>
+  <div class="post-content"><p style="text-align: center;"><img class="aligncenter size-full wp-image-645" title="Ubuntu logo" src="../assets/images/930a59392f8aaa3e.png" alt="" width="202" height="55" /></p>
+Comme vous le savez sûrement, la nouvelle version d'Ubuntu (10.4 Lucid Lynx) est sortie depuis peu. (Youpi !)
+
+Avant que sorte cette nouvelle mouture j'avais un serveur personnel qui tournait sur la 9.10 (Karmic Koala). J'ai aussi eu l'occasion d'essayer la 10.4 sur mon ordinateur portable à partir de l'alpha 2 en mettant à jour à partir de la 9.10 sans aucun problème.
+
+Donc, tout content, je décide de mettre à jour mon serveur vers la 10.4 !
+
+<strong>Premier problème :</strong> plus moyen de démarrer le serveur, le passage à Grub 2 aurait raté.
+<strong>Solution :</strong> Oui, oui, j'ai formaté et réinstallé la 10.4. Mon serveur personnel n'as pas grand-chose d'important, je l'utilise surtout pour le stockage de fichiers.
+
+<strong>Deuxième problème :</strong> je n'arrive plus à accéder au bureau à distance (vino-server) lorsque l'écran est débranché du serveur. Après avoir beaucoup cherché, le problème vient de X.Org et de <a href="https://wiki.ubuntu.com/X/KernelModeSetting">KMS</a>. Lorsqu'un écran est détecté X.Org se lance, sinon rien.
+<strong>Solution :</strong> Désactiver le pilote correspondant à votre carte graphique au démarrage de grub (pour ce qui est du KMS).
+<ul>
+	<li>Éditez le fichier de configuration de grub : <code>sudo nano /etc/default/grub</code></li>
+	<li>Ajoutez <code>radeon.modeset=0</code> à la fin de la ligne <code>GRUB_CMDLINE_LINUX_DEFAULT=</code> (si vous avez une ATI Radeon par exemple, autres <a href="https://wiki.ubuntu.com/X/KernelModeSetting">regardez ici</a>)</li>
+	<li>et mettez à jour grub : <code>sudo update-grub</code></li>
+</ul>
+Voilà, votre serveur VNC pourra maintenant se lancer sans avoir besoin d'un écran branché ;)
+
+<strong>Même problème avec Wine :</strong> si aucun écran n'est branché, pas moyen d'ouvrir des applications graphiques même avec X.Org démarré.
+<strong>Solution :</strong> Désactiver le mode XVid
+<ul>
+	<li>Éditez le fichier user.reg : <code>nano /home/votresession/.wine/user.reg</code></li>
+	<li>Ajoutez tout à la fin les lignes suivantes :
+<code>[Software\\Wine\\X11 Driver] 1269299093
+"UseXVidMode"="N"</code></li>
+	<li>Enregistrez le fichier</li>
+</ul>
+En espérant que ça aidera certains :)</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="le-nouveau-gestionnaire-dextensions-de-firefox.html">← Le nouveau gestionnaire d&#x27;extensions de Firefox</a><a rel="next" href="stage.html">Stage →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>13</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Nats</strong><time datetime="2010-05-15 19:24:08">15 mai 2010</time></header>
+    <div class="comment-body">bonjour! moi je viens d&#x27;installer ubuntu 10.4 (ce matin) et j&#x27;ai plein de problèmes. plus de son que ce soit vidéo ou musique (sauf si je mets des oreillettes), plus de skype (je ne reçois aucun message et dès que je veux en envoyer un la fenêtre se ferme direct) et il faudrait que j&#x27;installe des tas de trucs pour visionner correctement mes sites que je voyait sans problème avant...
+
+en général c&#x27;est mon frère (geek obviously -c&#x27;est lui qui a insisté pour que je passe sous linux-) qui me fait hotline à distance mais il est en WE et je panique!
+
+il faut me parler en langage bébé pour que je comprenne si vous avez des solutions à m&#x27;apporter. :)
+merci d&#x27;avance.</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2010-05-15 22:18:16">15 mai 2010</time></header>
+    <div class="comment-body">tu utilisais quel système d&#x27;exploitation avant ?
+pour le son, quel est ta carte son ? (intégré à la carte mère, autre ?)
+pour Skype est tu sûr d&#x27;avoir la dernière version du site ?
+pour les sites quel navigateur ?</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Nats</strong><time datetime="2010-05-16 17:48:48">16 mai 2010</time></header>
+    <div class="comment-body">suis dessus là avec mon frère. on va essayer de se débrouiller. merci en tous cas pour la réponse et je te recontacte au cas où!</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Bruce</strong><time datetime="2010-05-19 18:52:52">19 mai 2010</time></header>
+    <div class="comment-body">tu utilisais quel système d&#x27;exploitation avant ?
+pour le son, quel est ta carte son ? (intégré à la carte mère, autre ?)
+pour Skype est tu sûr d&#x27;avoir la dernière version du site ?
+pour les sites quel navigateur ?</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>noona</strong><time datetime="2010-05-20 22:07:31">20 mai 2010</time></header>
+    <div class="comment-body">Bonjour
+J&#x27;ai le même problème que Nats avec Ubuntu 10.04 plus de son et une video qui se lit sept fois plus vite. Je ne sais plus quoi faire. J&#x27;ai déjà installer ubuntu 9.10 deux fois et je n&#x27;ai jamais réussi à avoir le son. 
+Quand je fais un lspci | grep Audio voilà ce qu&#x27;il me donne
+00:1b.0 Audio device: Intel Corporation 5 Series/3400 Series Chipset High Definition Audio (rev 05)
+01:00.1 Audio device: ATI Technologies Inc Redwood HDMI Audio [Radeon HD 5600 Series]</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2010-05-21 08:49:11">21 mai 2010</time></header>
+    <div class="comment-body">Tu as regardé dans la section des pilotes propriétaires ?</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>noona</strong><time datetime="2010-05-20 22:20:21">20 mai 2010</time></header>
+    <div class="comment-body">Oops Je n&#x27;ai pas terminé mon message précédent: Voilà la suite
+Alors comment corriger cela. Aidez moi svp</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>michel</strong><time datetime="2011-02-15 10:43:27">15 février 2011</time></header>
+    <div class="comment-body">J&#x27;ai plein de problèmes aussi!</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>jean</strong><time datetime="2011-10-09 16:11:15">9 octobre 2011</time></header>
+    <div class="comment-body">mais si je fais ça :
+Solution : Désactiver le pilote correspondant à votre carte graphique au démarrage de grub (pour ce qui est du KMS).
+
+si je branche à nouveau un écran, que se passe t&#x27;il ?
+est-ce que ça marche ou pas ?
+
+merci :-)
+
+jean</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2011-10-09 16:14:46">9 octobre 2011</time></header>
+    <div class="comment-body">Oui :) le KMS permet juste d&#x27;avoir un meilleur affichage de l&#x27;écran de démarrage d&#x27;Ubuntu (les points qui chargent)</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>jean</strong><time datetime="2011-10-09 22:23:46">9 octobre 2011</time></header>
+    <div class="comment-body">merci :-)
+mais dans mon ubuntu 10.04 le fichier grub dans /etc/default/ ,n&#x27;existe pas...
+est-ce normal ?
+en revanche, j&#x27;ai un /etc/grub.d qui contient : 
+00_header
+10_linux
+20_memtest86+
+etc.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2011-10-14 17:48:17">14 octobre 2011</time></header>
+    <div class="comment-body">oui ce n&#x27;est pas normal, tu devrais avoir ce fichier normalement...</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>joany</strong><time datetime="2012-02-09 22:27:36">9 février 2012</time></header>
+    <div class="comment-body">salut a vous 
+j&#x27;ai le même souci , impossible d’accéder a mon serveur par vnc sans écran connecté au serveur,
+
+je suis sous ubuntu 10.04
+avec un ZOTAC ZBOX HD-ID41
+
+j&#x27;ai bien suivi le lien pour les cartes nvidia mais je n&#x27;est pas tous compris (l&#x27;anglais et moi sa fait 2)
+
+merci de m&#x27;aider</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Ubuntu 10.4 Tips</footer>
+</body>
+</html>

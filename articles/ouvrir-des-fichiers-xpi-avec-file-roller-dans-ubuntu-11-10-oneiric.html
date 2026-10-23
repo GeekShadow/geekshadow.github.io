@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Depuis la mise à jour d&#x27;Ubuntu 11.10 Oneiric, impossible d&#x27;ouvrir de fichiers .xpi (type de fichier utilisé par les extensions de Mozilla Firefox et Thunderbird notamment) avec file-roller, le gestionnaire d&#x27;archive par défaut. C&#x27;est assez…">
+    <title>Ouvrir des fichiers xpi avec file-roller dans Ubuntu 11.10 Oneiric | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">4 décembre 2011</p>
+    <h1>Ouvrir des fichiers xpi avec file-roller dans Ubuntu 11.10 Oneiric</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciel Libre</span> <span class="tag">Open Source</span> <span class="tag">Tutoriels</span></div>
+  </header>
+  <div class="post-content"><img class="alignright size-full wp-image-1054" title="xpiubuntu" src="../assets/images/b3211e7161b1c0cd.png" alt="" width="150" height="120" />Depuis la mise à jour d'Ubuntu 11.10 Oneiric, impossible d'ouvrir de fichiers <a href="http://fr.wikipedia.org/wiki/XPInstall">.xpi</a> (type de fichier utilisé par les extensions de Mozilla Firefox et Thunderbird notamment) avec file-roller, le gestionnaire d'archive par défaut. C'est assez embêtant pour les développeurs ainsi que les traducteurs qui devaient renommer en .zip leur fichiers.
+Mais après plusieurs recherches j'ai trouvé une solution ! :)
+<ol>
+	<li>Installez assogiate via la Logithèque Ubuntu ou avec le terminal : sudo apt-get install assogiate</li>
+	<li>Démarrez assogiate (Applications &gt; Outils système &gt; Files Type Editor)</li>
+	<li>Cliquez sur la loupe, et recherchez "zip" dans la case de recherche</li>
+	<li>Descendez de la liste, et repérez "application | zip | archive zip</li>
+	<li>Faites un clic droit sur l'élément et choisissez "Edit"</li>
+	<li>Cliquez sur l'onglet "Filenames", puis cliquez sur "Add"</li>
+	<li>Tapez "*.xpi" dans le Pattern, puis cliquez sur "Add"</li>
+	<li>Vous pouvez cliquez sur "Close" et fermer assogiate</li>
+</ol>
+Voilà, à présent les fichiers avec une extension .xpi devraient être reconnus comme des archives sur votre système avec une icône zip.
+
+&nbsp;</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="mozillians-code-rush-ngale.html">← Mozillians, Code Rush, NGale</a><a rel="next" href="the-mozilla-story.html">The Mozilla Story →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>4</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>caméléon</strong><time datetime="2011-12-04 08:57:13">4 décembre 2011</time></header>
+    <div class="comment-body">Merci pour l&#x27;astuce.
+Est-ce qu&#x27;il y a un bug identifié pour ce problème?</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Goofy</strong><time datetime="2011-12-04 09:37:45">4 décembre 2011</time></header>
+    <div class="comment-body">Super ! Tu me simplifies la vie en m&#x27;économisant des manœuvres fastidieuses, merci !
+
+Une précision pour ceux qui comme moi sont vite perdus à cause d&#x27;un détail. Pour lancer assogiate une fois installé en mode graphique, il se trouve dans 
+Applications &gt; Outils système &gt; Files Type Editor</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2011-12-04 12:48:40">4 décembre 2011</time></header>
+    <div class="comment-body">@caméléon
+
+Je n&#x27;ai rien vu de semblable, j&#x27;ai ouvert un bug chez Ubuntu :
+https://bugs.launchpad.net/ubuntu/+source/file-roller/+bug/899881
+
+@Goofy
+
+Merci, j&#x27;ai ajouté ça à l&#x27;article.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Arialia</strong><time datetime="2012-02-19 15:12:39">19 février 2012</time></header>
+    <div class="comment-body">Merci pour l&#x27;astuce</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Ouvrir des fichiers xpi avec file-roller dans Ubuntu 11.10 Oneiric</footer>
+</body>
+</html>

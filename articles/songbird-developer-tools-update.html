@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Depuis le début, j&#x27;utilisais Songbird Developer Tools pour m&#x27;aider à créer des extensions pour Songbird. En quoi consiste &quot;DevTools&quot; ? C&#x27;est un regroupement de différents outils conçus à la base pour Firefox et plus généralement la…">
+    <title>Mise à jour de Songbird Developer Tools|Songbird Developer Tools Update | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">12 septembre 2010</p>
+    <h1>Mise à jour de Songbird Developer Tools|Songbird Developer Tools Update</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciels</span> <span class="tag">Open Source</span> <span class="tag">Projets</span></div>
+  </header>
+  <div class="post-content"><img class="alignright size-full wp-image-790" title="Lasso Bird" src="../assets/images/da93b861dbea67ac.png" alt="" width="226" height="204" />
+
+<span lang="fr">Depuis le début, j'utilisais <a href="http://addons.songbirdnest.com/addon/68">Songbird Developer Tools</a> pour m'aider à  créer des <a href="http://addons.songbirdnest.com/search?query=geekshadow">extensions</a> pour <a href="http://getsongbird.com/">Songbird</a>. En quoi consiste "DevTools" ? C'est  un regroupement de différents outils conçus à la base pour Firefox et  plus généralement la plateforme Mozilla (Gecko/XULRunner). En regardant  la description :</span>
+
+<span lang="en">Since the beginning, I was using <a href="http://addons.songbirdnest.com/addon/68">Songbird Developer Tools</a> to help me create <a href="http://addons.songbirdnest.com/search?query=geekshadow">add-ons</a> for <a href="http://getsongbird.com/">Songbird</a>. In what consist DevTools ? It's a pack of different Tools originally designed for Firefox and globally the Mozilla platform (Gecko/XULRunner). Looking at the description :</span>
+<ul>
+	<li><span lang="fr">Assistant de création de thèmes, pour créer des "plumes"</span></li>
+	<li><span lang="fr">Assistant de création d'extensions, permet de faire une extension de base avec des parties d'interface</span></li>
+	<li><span lang="fr">Options pour désactiver le cache de XUL et permettre le rafraichissement de l'interface</span></li>
+	<li><span lang="fr">Plus de débogages</span></li>
+	<li><span lang="fr">La table périodique de XUL, pour tester toutes les possibilités d'interfaces</span></li>
+	<li><span lang="fr">Accès facile au gestionnaire de profils</span></li>
+	<li><span lang="fr">Un bouton pour rapporter des bugs</span></li>
+	<li><span lang="fr">Une console de débogage Javascript et environnement de test</span></li>
+</ul>
+<ul>
+	<li><span lang="en">The Feathers Wizard, used to set up feathers development projects</span></li>
+	<li><span lang="en">The Extension Wizard, which creates a HelloWorld extension and UI sample code</span></li>
+	<li><span lang="en">Options to disable XUL caching and refresh the UI</span></li>
+	<li><span lang="en">More debug output</span></li>
+	<li><span lang="en">The XUL Periodic Table, so you can test all the standard XUL widgets</span></li>
+	<li><span lang="en">Easy access to the Profile Manager</span></li>
+	<li><span lang="en">A great big bug report button</span></li>
+	<li><span lang="en">Javascript debugger and test environment</span></li>
+</ul>
+<span lang="fr">Alors que c'était bien pratique, Songbird a beaucoup évolué (nouvelles fonctionnalités, nouvelle API etc.) mais personne n'a pris soin de cette extension, à part <a href="http://addons.songbirdnest.com/addon/68/versions">la correction d'erreurs et l'augmentation du maxVersion</a> toujours et encore.</span>
+
+<span lang="en">While this was quite useful, Songbird was evolving (new features, new API etc.), and nobody was taking care of this add-on, except <a href="http://addons.songbirdnest.com/addon/68/versions">fixing errors and bumping maxVersion</a> over and over.</span>
+
+<span lang="fr">Comme c'est une super extension, j'ai décidé de l'améliorer en apportant diverses modifications :</span>
+<ul>
+	<li><span lang="fr">Depuis Songbird 1.4.3, les pages media personnalisées peuvent avoir leur propres bouton (comme avec <a href="http://addons.songbirdnest.com/addon/1221">BirdQuizz</a> par exemple). Désormais, lorsque vous créerez une page media, vous aurez le code pour afficher ce bouton. (Non disponible pour Songbird 1.8 à cause d'un bug)
+<img title="Media View Button" src="../assets/images/image-unavailable.svg" alt="" width="282" height="32" /></span></li>
+	<li><span lang="fr">Depuis le thème "Purple Rain", les boutons de la barre d'outils nécessite le fond graphique du <a href="../assets/images/image-unavailable.svg">bouton de base</a>. Lorsque vous créerez un bouton pour la barre d'outils, vous aurez maintenant un modèle correspondant au bon thème ainsi que des tailles correctes dans le fichier CSS.</span></li>
+	<li><span lang="fr">Les pages media créées disposent maintenant d'un titre de page pour éviter d'afficher le lien Chrome dans l'onglet (ce n'était pas lisible sinon !)</span></li>
+	<li><span lang="fr">Chaque extension créée ajoute maintenant une <a href="../assets/images/image-unavailable.svg">icône par défaut</a> (iconURL), j'ai fait ce choix car beaucoup de personnes oublient d'en mettre une ou simplement évitent. C'est une étape importante pour que votre <a href="http://blog.mozilla.com/addons/2010/07/15/add-on-icon-makeover-contest/">extension soit reconnue</a>.</span></li>
+	<li><span lang="fr">Suppression des liens XULPlanet car site fermé depuis un petit moment et correction de plusieurs liens du <a href="http://developer.mozilla.org">Centre développeur de Mozilla</a>. (youpi le nouveau site est disponible !)</span></li>
+	<li><span lang="fr">Suppression de la possibilité d'inclure une boîte de dialogue "A propos" dans l'assistant, c'était inutile car le gestionnaire d'extensions de Mozilla génère lui-même cette <a href="../assets/images/image-unavailable.svg">boîte de dialogue</a>.  Je crois que cette fonction était dédiée à Firefox 2.0. Conseil pour les développeurs : au lieu de faire une page "A propos" en XUL, réaliser la en HTML ;)</span></li>
+	<li><span lang="fr">Lorsque que vous créez un <a href="http://wiki.songbirdnest.com/Developer/Articles/Getting_Started/Display_Panes">Panneau d'affichage</a> dans l'assistant, vous aurez maintenant la possibilité de choisir quel panneau vous souhaitez utiliser !  Panneau en bas des services (pochette album), panneau de contenu du bas (mashTape) et panneau de droite (paroles). Vous pouvez même en choisir plusieurs en même temps.</span></li>
+	<li><span lang="fr">Suppression des chaînes de caractères inutiles provenant des panneaux d'affichage si l'utilisateur n'inclue pas cette fonction</span></li>
+	<li><span lang="fr"><strong>Possibilité de créer un marque-page Radio ou Services dans le panneau de services via l'assistant</strong> : C'est une fonctionnalité majeure, alors qu'il était possible d'utiliser le panneau de services dans les versions précédentes de Songbird, cette fonction vous permettra de créer <a href="../assets/images/image-unavailable.svg">une extension avec un marque-page Radio ou Services</a> avec du code compatible avec Songbird 1.8 et plus. C'est dédié au <a href="http://www.frenchbirds.org/2010/05/08/nouveau-panneau-de-services/">nouveau panneau de services</a>.</span></li>
+	<li><span lang="fr">De plus, lorsque vous créez une extension avec un marque-page dans le panneau de services, vous profiterez d'un <a href="https://wiki.songbirdnest.com/Developer/Reference_Docs/Components/ServicePane">lien vers la documentation de ce nouveau panneau de services</a>.</span></li>
+	<li><span lang="fr">Graphismes améliorés de l'extension pour mieux correspondre au thème "Purple Rain" : les pages d'accueil des extensions et des thèmes profitent <a href="../assets/images/image-unavailable.svg">d'un meilleur design par exemple</a>.</span></li>
+	<li><span lang="fr">et bien évidemment, le "maxVersion" a été défini pour la version 1.9.0 pour être compatible avec la sortie prochaine du nom de code <a href="http://wiki.songbirdnest.com/Releases/Pink_Floyd">"Pink Floyd"</a></span></li>
+</ul>
+<span lang="en">Since it's a great add-on, I decided to improve it, by doing some modifications :</span>
+<ul>
+	<li><span lang="en">Since Songbird 1.4.3, customs media view page can have their own graphic button (like <a href="http://addons.songbirdnest.com/addon/1221">BirdQuizz</a> for example). When creating a Media View, you now have the code to show this button.
+<img class="alignnone size-full wp-image-784" title="Media View Button" src="../assets/images/66255b833e6997a4.png" alt="" width="282" height="32" /></span></li>
+	<li><span lang="en">Since the Purple Rain feather, toolbar buttons changed and developers have to provide the <a href="../assets/images/image-unavailable.svg">basic button</a>. When creating a toolbar button, you now have a good graphic template with correct sizes in the CSS file.</span></li>
+	<li><span lang="en">Media View created now comes with a title (in page) to prevent the media tab showing the chrome URI (not pretty !)</span></li>
+	<li><span lang="en">Each add-on created now comes <a href="../assets/images/6ac63c989986ae56.png">with a default icon</a> for the add-on (iconURL), I did this since many people forgot or avoid to use an icon, this is a important step for <a href="http://blog.mozilla.com/addons/2010/07/15/add-on-icon-makeover-contest/">your add-on to be recognized</a>.</span></li>
+	<li><span lang="en">Remove of XULPlanet links since it's closed and correct a lot of <a href="developer.mozilla.org">Mozilla Developer Center</a> links. (hurray new website is live !)</span></li>
+	<li><span lang="en">Delete the ability to add about box in the wizard, this was useless since the Mozilla add-ons manager generate itself the <a href="../assets/images/007b37a559361508.png">about box</a>. I think this feature was dedicated to Firefox 2.0 extensions, but not sure. Also for developers, instead of doing about inside a XUL file, you should make an html page.</span></li>
+	<li><span lang="en">When creating a <a href="http://wiki.songbirdnest.com/Developer/Articles/Getting_Started/Display_Panes">Display Pane</a> in the wizard you will be now able to choose which pane you will use ! Service Pane bottom, Content Pane bottom and Right Sidebar. You can even choose multiple pane to use.</span></li>
+	<li><span lang="en">Remove of useless Display Pane translation strings if the user didn't choose to make a Display Pane</span></li>
+	<li><span lang="en"><strong>Ability to create both a Radio and Services node for the Service Pane in Wizard</strong> : This is a major feature, while you can make use of the service pane for ages in previous Songbird versions, this feature will let you help create <a href="../assets/images/fdee3aea03ca2ff1.png">an addon with a Radio or Services node</a> with code compatible with Songbird 1.8 and more. It's dedicated to the new Service Pane.</span></li>
+	<li><span lang="en">Plus, once you create an add-on with a Service Pane node, you will have a <a href="https://wiki.songbirdnest.com/Developer/Reference_Docs/Components/ServicePane">link to the documentation of Service Pane</a>.</span></li>
+	<li><span lang="en">Refine some graphics of the add-on to match Purple Rain feather : both extensions and feathers hello page have <a href="../assets/images/6b17584a9ab47432.png">a better design for example</a>.</span></li>
+	<li><span lang="en">and of course, maxVersion was set to 1.9.0 to be compatible with <a href="http://wiki.songbirdnest.com/Releases/Pink_Floyd">"Pink Floyd"</a> release</span></li>
+</ul>
+<span lang="fr">Ceci n'est pas ce que j'appelle un patch "énorme" mais il améliore certainement les outils pour les développeurs. Je pense que c'est une première étape.</span>
+
+<span lang="fr">QUOI ENCORE PLUS ?</span>
+
+<span lang="fr">Oui, je pense même ajouter des choses sympa.</span>
+<ul>
+	<li><span lang="fr">Possibilité de créer un bouton menu dans la barre d'outils (comme <a href="http://adblockplus.org/">AdBlock Plus</a>)</span></li>
+	<li><span lang="fr">Possibilité de choisir la position de ce bouton</span></li>
+	<li><span lang="fr">Traduire l'extension (Je devrais faire des tests avec l'équipe de <a href="http://babelzilla.org/">BabelZilla</a>)</span></li>
+	<li><span lang="fr">Plus de personnalisations du panneau de services</span></li>
+	<li><span lang="fr">Possibilité de créer une extension avec un moteur de recherche (comme <a href="http://addons.songbirdnest.com/addon/1500">SkreemR</a>)</span></li>
+	<li><span lang="fr">et plus !!!
+</span></li>
+</ul>
+<span lang="fr"><a href="http://bugzilla.songbirdnest.com/show_bug.cgi?id=20172">Le patch n'est pas encore intégré</a> et bien sûr l'extension officielle n'est pas à jour non plus, mais si vous souhaitez la nouvelle version, vous pouvez <a href="http://bugzilla.songbirdnest.com/attachment.cgi?id=16451">installer ce fichier XPI</a> dans votre Songbird. (Songbird 1.8 ou plus recommandé)</span>
+
+<span lang="en">This is not what we can call an "huge" patch, but it definitely improve Tools for the developers. I think it's the first step.</span>
+
+<span lang="en">WAIT MORE TO COME ?</span>
+
+<span lang="en">Yep, I'm considering more cool things to add.</span>
+<ul>
+	<li><span lang="en">Ability to create menu button in the toolbar (like <a href="http://adblockplus.org">AdBlock Plus</a>)</span></li>
+	<li><span lang="en">Ability to choose the position for this button</span></li>
+	<li><span lang="en">Localize the add-on (I should do some test with <a href="http://babelzilla.org/">BabelZilla</a> team)</span></li>
+	<li><span lang="en">More customization for the Service Pane</span></li>
+	<li><span lang="en">Ability to create Search add-on (like <a href="http://addons.songbirdnest.com/addon/1500">SkreemR</a>)</span></li>
+	<li><span lang="en">and more !!!</span></li>
+</ul>
+<span lang="en"><a href="http://bugzilla.songbirdnest.com/show_bug.cgi?id=20172">The patch is not yet committed</a>, and so the official add-on is not up to date yet, but if you want to give a go, you can test this new version by <a href="http://bugzilla.songbirdnest.com/attachment.cgi?id=16451">installing this XPI file</a> on your Songbird. (Songbird 1.8 or more recommended)</span></div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="sup.html">← Sup</a><a rel="next" href="vente-de-mon-wikireader.html">Vente de mon WikiReader →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>3</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Lukas_Skywalker</strong><time datetime="2010-08-31 21:03:52">31 août 2010</time></header>
+    <div class="comment-body">I was always interested in what your changes will be. Here&#x27;s the answer. And it will definitely be great!
+Thanks for this one.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2010-10-12 19:48:48">12 octobre 2010</time></header>
+    <div class="comment-body">Thanks :)</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>jetfly</strong><time datetime="2011-08-10 12:49:28">10 août 2011</time></header>
+    <div class="comment-body">I’ve installed Songbird Developer Tools, about 30 times, every time it installs it says to restart songbird, so I do as instructed, but none of the tools are there when it restarts and it doesn’t show up in my add-ons list</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Mise à jour de Songbird Developer Tools|Songbird Developer Tools Update</footer>
+</body>
+</html>

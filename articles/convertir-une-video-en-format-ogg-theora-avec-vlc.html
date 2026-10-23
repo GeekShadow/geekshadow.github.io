@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Je vous propose un tutoriel pour encoder vos vidéos en format Ogg Theora et WebM avec le logiciel VLC. Quel est l&#x27;intérêt de ces formats ? Tout d&#x27;abord, ils sont libres et pris en charge par pas mal de lecteurs vidéos dont VLC et MPlayer.…">
+    <title>Convertir une vidéo en format WebM ou Ogg Theora avec VLC | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">22 juin 2010</p>
+    <h1>Convertir une vidéo en format WebM ou Ogg Theora avec VLC</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciels</span> <span class="tag">Open Source</span> <span class="tag">Tutoriels</span> <span class="tag">Vidéo</span> <span class="tag">Web</span></div>
+  </header>
+  <div class="post-content">Je vous propose un tutoriel pour encoder vos vidéos en format Ogg Theora et WebM avec le logiciel VLC.
+
+Quel est l'intérêt de ces formats ? Tout d'abord, ils sont libres et pris en charge par pas mal de lecteurs vidéos dont VLC et MPlayer. Ces formats vous permettent aussi de diffuser de la vidéo sur votre site internet/blog sans l'installation de plugins supplémentaires si vos visiteurs utilisent un navigateur prenant en charge les balises &lt;video&gt; (en HTML5) comme <a href="http://www.mozilla.com/en-US/?from=sfx&amp;uid=269142&amp;t=582">Firefox</a>, Google Chrome, Safari ou Opera.
+Enfin, vous pouvez appliquer différents effets sur votre vidéo en utilisant le SVG.
+
+Tout d'abord, <a href="http://www.videolan.org">téléchargez VLC</a> et installez le si ce n'est pas déjà fait.
+Lancer VLC, puis allez dans le menu "Média" et choisissez "Convertir / Enregistrer..."
+
+<img class="aligncenter size-full wp-image-373" title="vlc1" src="../assets/images/81702fb320a2042e.png" alt="vlc1" width="416" height="291" />
+<ul>
+	<li>Utilisez le bouton "Ajouter" pour sélectionner votre fichier vidéo (vous pouvez en choisir plusieurs) ;</li>
+	<li>Cliquez sur le bouton "Convertir / Sauvegarder" ;</li>
+	<li>Indiquez dans "Fichier de destination" où vous souhaitez sauvegarder le fichier converti. (Donnez-lui une extension en .ogg pour le Theora ou .webm pour le WebM) ;</li>
+	<li>Choisissez le profil "Video - VP80 + Vorbis (Webm)" puis cliquez sur Démarrer ;</li>
+	<li>Pour du Ogg Theora choisissez le profil "Video - Theora + Vorbis (OGG)".</li>
+</ul>
+<blockquote>Il faut savoir que le codec WebM sera utilisé dans Firefox 4, Google Chrome 6, Internet Explorer 9 et les futures versions de Safari et d'Opera. De plus, des plate-formes comme YouTube fournissent déjà les vidéos dans ce format :)</blockquote>
+Enfin pour intégrer cette vidéo à votre Site Internet/Blog rien de plus simple !
+
+Pour Wordpress par exemple, allez dans l'onglet "HTML" puis à l'endroit désiré entrez le code ci-dessous :
+
+<code>&lt;video src='http://monserveur.com/mavideo.webm' controls&gt;
+Votre navigateur ne supporte pas la balise vidéo.
+&lt;/video&gt;</code>
+
+Si le navigateur prend en charge la balise vidéo, il affichera la vidéo avec les contrôles de lecture.
+Vous pouvez aussi faire démarrer la vidéo automatiquement via le paramètre "autoplay" à placer après "controls"
+
+Tout ce qui se trouvera entre la balise &lt;video&gt; et &lt;/video&gt; sera affiché pour les utilisateurs ne disposant pas d'un navigateur compatible. L'idéal est de leur proposer un lecteur en flash tout en leur indiquant que leur navigateur n'est pas compatible ;)
+Pour plus d'information sur la balise video, lisez <a href="https://developer.mozilla.org/En/HTML/Element/Video">cet article</a> sur le Wiki de Mozilla.
+
+Exemple de vidéo au format Ogg Theora (Firefox 3.5+/Chrome 5) :
+<video src='http://geekshadow.com/videos/warioware.ogg' controls>
+Votre navigateur ne supporte pas la balise vidéo, <a href="http://www.mozilla.com/en-US/?from=sfx&amp;uid=269142&amp;t=438">téléchargez Firefox 3.6</a> ou Google Chrome 5 !
+</video>
+
+Exemple de vidéo au format WebM (Firefox 3.7+/Chrome 6) :
+<video src='http://geekshadow.com/videos/warioware.webm' controls>
+Votre navigateur ne supporte pas la balise vidéo, <a href="ftp://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central/">téléchargez une version nightly de Firefox 3.7</a> ou Google Chrome 6 !
+</video></div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="sudosocial-me.html">← sudoSocial.me</a><a rel="next" href="sortie-de-vlc-1-1-0.html">Sortie de VLC 1.1.0|VLC 1.1.0 Release →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>16</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>VLC sorti en version 1.0 ! « Antoine TURMEL</strong><time datetime="2009-07-07 15:34:21">7 juillet 2009</time></header>
+    <div class="comment-body">[...] logiciel vous permet aussi de convertir des fichiers, par exemple convertir des vidéos en format Ogg Theora compatible Firefox 3.5 / [...]</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Nexus6</strong><time datetime="2009-07-08 09:36:25">8 juillet 2009</time></header>
+    <div class="comment-body">Bonjour!
+
+Merci c&#x27;est nickel! :)
+
+Je conseille à tout le monde de passer sur la page officiel de démo de Firefox3.5 :
+
+http://people.mozilla.com/~prouget/demos/
+
+Wow le délire... :)
+
+/Nexus6</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Skeener</strong><time datetime="2009-07-14 23:10:17">14 juillet 2009</time></header>
+    <div class="comment-body">J&#x27;utilise VLC 1.0.0, j&#x27;ai effectué toutes les étapes, mais il ne se passe rien quand je finalise par &quot;démarrer&quot; ? quid ?
+merci.</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2009-07-15 20:09:18">15 juillet 2009</time></header>
+    <div class="comment-body">La barre de progression devrait avancer normalement, et le fichier devrait se créer.</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Desideriius</strong><time datetime="2009-09-01 15:29:15">1 septembre 2009</time></header>
+    <div class="comment-body">Est-ce que VLC peut convertir en temps réel un flux vidéo 
+qu&#x27;il reçoit par le réseau en Ogg Theora ?</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2009-09-01 21:30:06">1 septembre 2009</time></header>
+    <div class="comment-body">@Desideriius
+Oui :)</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Dorin</strong><time datetime="2010-02-15 17:33:50">15 février 2010</time></header>
+    <div class="comment-body">Je cherchais un logiciel de convertuion d&#x27;une vidéo au format OGG. Après de longues recherches infructueuse je suis tombé sur l&#x27;information que VLC permettait de résoudre le problème.
+
+J&#x27;ai aussitôt ouvert VLC que j&#x27;utlise fréquemment. J&#x27;ai téléchargé la dernire version (1.0.5.0 du 30 01 2010),et suivi les instructions du présent tuto: Média\ &quot;convertir-enregistrer&quot;. Une fenêtre  portant le titre &quot;Ouvrir un Média&quot; s&#x27;est ouverte avec les onglets:Fichier; Disque; réseau; Périphérique de Capture.
+
+Je n&#x27;ai pas eu de case Fichier à cocher, mais l&#x27;onglet   &quot;Fichier&quot;</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Dorin</strong><time datetime="2010-02-15 17:55:47">15 février 2010</time></header>
+    <div class="comment-body">Je suis tombé sur l&#x27;information que VLC pouvait convertir un fichier Vidéo au format *.OGG. J&#x27;ai aussitôt ouvert VLC (version 1.0.5.0) et fait une tentaive infructueuse. je suis tombé sur le présent tuto en espérant réussir, mais après &quot;Média&quot;, et &quot;Convetir/Enregistre&quot; dans le menu déroulantn j&#x27;obtiens une fenêtre portant le titre &quot;Ouvrir un Média&quot; avec 4 onglets: &quot;Fichier&quot;; &quot;Disque&quot;; &quot;Réseau&quot;; &quot;périphérique de Capture&quot;. il n&#x27;y a pas de case à cocher &quot;Fichier&quot; par contre, l&#x27;onglet &quot;Fichier&quot; est actif . J&#x27;ai beau chercher l&#x27;onglet &quot;Encapsulation&quot; il n&#x27;apparait pas.
+
+Je me demande pourquoi je tombe sur cette impasse ? Il y a sûrement quelquechose qui m&#x27;échappe.
+
+Merci de m&#x27;éclairer et bravo pour ce tuto qui semble si évident et simple à suivre
+
+Ch D</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Sortie de VLC 1.1.0 « Antoine Turmel</strong><time datetime="2010-06-22 13:44:06">22 juin 2010</time></header>
+    <div class="comment-body">[...] Projets            « Convertir une vidéo en format WebM ou Ogg Theora avec VLC [...]</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Boufonman35</strong><time datetime="2010-07-18 16:26:48">18 juillet 2010</time></header>
+    <div class="comment-body">Alors, chez moi niveau conversion c&#x27;est un poil différent, je n&#x27;est pas le choix Webm dans le menu déroulant, j&#x27;ai alors créé ce choix:
+Methode d&#x27;encapsulation: WebM
+Codec vidéo: VP8
+Codec audio: vorbis
+
+Ensuite je convertis ... seul problème le fichier ainsi obtenu est illisible (même avec VLC) je ne sait pas où cela foire ... lorsque j&#x27;active l&#x27;affichage du flux de sortie lors de la conversion la vidéo est d&#x27;une qualité pauvre et le son est carrément nul ...
+
+Je réessayerais plus tard, le webm ça a l&#x27;air sympa mais pour l&#x27;instant c&#x27;est pas encore ça !</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Amassine</strong><time datetime="2011-08-29 14:01:45">29 août 2011</time></header>
+    <div class="comment-body">Merci pour la metode</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>patrick</strong><time datetime="2013-09-22 13:08:30">22 septembre 2013</time></header>
+    <div class="comment-body">Bonjout, un grand grand merci pour ce tuto. 
+Une fois convertit mon fichier avi en wemb, le programme m&#x27;impose l&#x27;extension .ps , dois je le laisser (c&#x27;est pour publier sur you tube)
+merci d&#x27;avance
+Patrick</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Romain</strong><time datetime="2013-11-26 16:15:48">26 novembre 2013</time></header>
+    <div class="comment-body">VLC est un logiciel gratuit qui est performant et bien pratique quand même ! Franchement, je pense que c&#x27;est notamment grâce à ces services gratuit de conversion vidéo qu&#x27;il a autant fonctionné car au début ce n&#x27;était pas gagné avec l&#x27;omniprésence du player de Windows. Merci pour cette astuce, surtout que comme je suis webmaster, le fait de ne pas utiliser Youtube pour diffuser des vidéos : excellent !</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>JP</strong><time datetime="2015-10-17 13:09:39">17 octobre 2015</time></header>
+    <div class="comment-body">Excellent. Dommage qu&#x27;il ne soit pas possible de &quot;merger&quot; plusieurs fichiers à convertir en 1 seul.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>lopora</strong><time datetime="2016-08-24 09:56:39">24 août 2016</time></header>
+    <div class="comment-body">Merci. Mais je trouve que VLC ne permet pas de s&#x27;installer sur mon ordinateur. Je ne sais pas pourquoi. Alors, je découvre un autre convertisseur vidéo gratuit que je peux installer sans problème. http://www.reneelab.fr/convertisseur-video-gratuit.html</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>sur le convertisseur youtube</strong><time datetime="2016-10-05 08:13:30">5 octobre 2016</time></header>
+    <div class="comment-body">Ah cool ! ça fait super longtemps que j’utilise VLC comme lecteur et j’ignorais complètement qu’il pouvait convertir des fichiers.  J’avais l’habitude de me servir de l’outil de convertisseur sur youtube. En tout cas, merci pour le partage !</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Convertir une vidéo en format WebM ou Ogg Theora avec VLC</footer>
+</body>
+</html>

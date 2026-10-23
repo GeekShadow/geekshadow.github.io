@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il y a quelques temps je parlais dans un article de SteamOS et de leurs machines. Malheureusement suite à des problèmes logistiques, Valve a décidé de distribuer ses 300 machines bêta uniquement aux États-Unis, ce qui fait que je n&#x27;aurais…">
+    <title>Test rapide de SteamOS | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">18 décembre 2013</p>
+    <h1>Test rapide de SteamOS</h1>
+    <div class="tag-list"><span class="tag">Actualité</span> <span class="tag">Général</span> <span class="tag">Jeux</span> <span class="tag">Logiciel Libre</span> <span class="tag">Logiciels</span> <span class="tag">Open Source</span> <span class="tag">Test</span></div>
+  </header>
+  <div class="post-content"><img class="aligncenter size-large wp-image-3400" src="../assets/images/86ca90d86a1cab77.png" alt="splash" width="640" height="360" />
+
+Il y a quelques temps je parlais <a href="http://blog.geekshadow.com/2013/10/29/le-nouvel-univers-de-steam/">dans un article</a> de <a href="http://store.steampowered.com/steamos/">SteamOS</a> et de leurs machines.
+
+Malheureusement <a href="http://steamcommunity.com/groups/steamuniverse#announcements/detail/1930088300965516570">suite à des problèmes logistiques</a>, Valve a décidé de distribuer ses 300 machines bêta uniquement aux États-Unis, ce qui fait que je n'aurais pas la chance de pouvoir mettre la main dessus ;) (Différents unboxing en <a href="http://imgur.com/a/l4Yav">photos</a>/<a href="http://www.youtube.com/watch?v=jXCbdn00pKY">vidéos</a> sont disponibles sur le net).
+
+Cependant, Valve a aussi publié la première version de son système d'exploitation SteamOS.
+Baptisée «Alchemist» cette première mouture propose une distribution <a href="http://fr.wikipedia.org/wiki/Linux">GNU/Linux</a> basée sur <a href="http://www.debian.org/">Debian</a> 7.1 «Wheezy» pour processeur 64-bits avec une prise en charge uniquement des cartes mère possédant l'<a href="http://fr.wikipedia.org/wiki/UEFI">UEFI</a>.
+
+J'ai testé le système rapidement pour vous dans une machine virtuelle grâce à ce <a href="http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/">tutoriel</a>.
+
+<!--more-->
+<p style="text-align: center;"><a href="../assets/images/2e95512b5dd31694.png"><img class="aligncenter size-medium wp-image-3397" src="../assets/images/fd5bb60a3eab0eb5.png" alt="SteamOS" width="500" height="294" /></a></p>
+Le système est de base installé en anglais et il est possible de configurer le clavier en Azerty ou autre.
+Steam est installé en version classique, mais aussi en version «Big Picture», ce qui permet de démarrer directement le système comme si vous allumiez une console de jeu de salon.
+
+Je n'ai pas testé de manette ni de jeu, j'ai plutôt regardé à quoi ressemblait le système. Certains paquets récents de Debian ont été «backportés» et Valve a inclus les derniers pilotes pour les cartes graphiques nVidia et AMD (ATI).
+Côté session utilisateur on retrouve du Gnome 3.4.2, le navigateur Internet par défaut est IceWeasel 17.0.10 qui correspond à l'ancienne version <a href="http://www.mozilla.org/fr/firefox/organizations/faq/">ESR</a> de Firefox mais il est aussi possible de surfer grâce au navigateur Internet intégré de Steam (basé sur WebKit).
+Il n'y a pas de lecteur multimédia installé par défaut, mais il y a fort à parier qu'il sera inclus dans Steam prochainement pour lire tout type de contenu (films, musique, podcasts...).
+
+Il n'y a pas de logithèque disponible avec des paquets téléchargeables supplémentaires, sûrement car les logiciels seront délivrés directement via Steam aussi.
+
+Deux utilisateurs sont disponibles de base : steam (mot de passe "steam") compte normal et desktop (mot de passe "desktop") qui est le compte Administrateur.
+
+<a href="../assets/images/7f202cbd269057a7.png"><img class="aligncenter size-medium wp-image-3398" src="../assets/images/d1f9ff19bee3354d.png" alt="SteamOS" width="500" height="294" /></a>
+
+Je pense que Valve a fait le bon choix en choisissant Debian, la distribution est très stable et légère. On aurait pu croire qu'ils auraient choisi de se baser sur Ubuntu, mais ce n'est plus vraiment un modèle en terme de légèreté et Canonical essaie de garder la main sur sa distribution.
+
+Valve a ouvert un compte dédié sur GitHub pour gérer les différents problèmes remontés : <a href="https://github.com/ValveSoftware/SteamOS">https://github.com/ValveSoftware/SteamOS</a>
+J'ai pour ma part <a href="https://github.com/ValveSoftware/SteamOS/issues/38">demandé</a> si Valve comptait inclure une version officielle de Firefox plutôt qu'IceWeasel ;)
+
+J'ai fait <a href="http://geekshadow.com/fichiers/steamos_wallpapers.zip">un petit pack</a> si vous désirez récupérer les fonds d'écrans de SteamOS.
+
+<a href="../assets/images/cb3f2c548bc55242.png"><img class=" wp-image-3402 alignnone" style="margin-left: 5px; margin-right: 5px;" src="../assets/images/f4e0aca68f31bfb5.png" alt="SteamOS" width="365" height="239" /></a><a href="../assets/images/1e60234c544a1601.png"><img class=" wp-image-3403 alignnone" style="margin-left: 5px; margin-right: 5px;" src="../assets/images/ada6b2af99d44e30.png" alt="SteamOS" width="365" height="239" /></a></div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="passage-a-free-mobile.html">← Passage à Free Mobile</a><a rel="next" href="les-24h-du-code-2014.html">Les 24h du code - 2014 →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>0</span></h2>
+    <p class="empty-comments">Aucun commentaire.</p>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Test rapide de SteamOS</footer>
+</body>
+</html>

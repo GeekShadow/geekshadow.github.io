@@ -1,4 +1,4 @@
-geekshadow.github.com
+geekshadow.github.io
 =====================
 
-Web
+Mon ancien blog, autrefois hébergé sur https://blog.geekshadow.com

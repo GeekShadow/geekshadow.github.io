@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hier, une amie m&#x27;a fait part de sa mésaventure, elle a récupéré des fichiers .psd sur un ordinateur Mac, et une fois revenue sur son système Ubuntu, plus moyen d&#x27;accéder aux données et même aussi sur Windows ! La clé USB apparait, mais…">
+    <title>Restaurer des données perdues sur une clé USB par exemple | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">11 février 2011</p>
+    <h1>Restaurer des données perdues sur une clé USB par exemple</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciel Libre</span> <span class="tag">Matériel</span> <span class="tag">Open Source</span> <span class="tag">Tutoriels</span></div>
+  </header>
+  <div class="post-content">Hier, une amie m'a fait part de sa mésaventure, elle a récupéré des fichiers .psd sur un ordinateur Mac, et une fois revenue sur son système Ubuntu, plus moyen d'accéder aux données et même aussi sur Windows ! La clé USB apparait, mais aucune partition n'est détectée...
+
+Je me suis donc mis en quête de trouver un logiciel pour récupérer ses données. J'ai tout d'abord trouvé le logiciel "foremost" disponible dans les paquets d'Ubuntu, cependant il est assez limité et ne permet pas de restaurer beaucoup de types fichiers (pas de prise en charge du format psd). Puis j'ai découvert <a href="http://www.cgsecurity.org/wiki/PhotoRec_FR">PhotoRec</a>, c'est un logiciel libre et compatible tous systèmes d'exploitation !
+
+Vous pouvez le <a href="http://www.cgsecurity.org/wiki/T%C3%A9l%C3%A9charger_TestDisk">télécharger ici</a> (choisissez Linux Kernel 2.6.x si vous êtes sur Ubuntu par exemple).
+
+Le reste se fait en ligne de commande (à partir de votre home) :
+<ul>
+	<li>On décompresse l'archive tar.bz2 :
+<code>tar xjf testdisk-6.11.3.linux26.tar.bz2</code></li>
+	<li>On crée un dossier ou se fera la sauvegarde :
+<code>mkdir sauvegarde</code></li>
+	<li>On se déplace dans le dossier de l'application :
+<code>cd testdisk-6.11.3/linux/</code></li>
+	<li>On démarre l'application PhotoRec avec les privilèges administrateur (votre mot de passe sera demandé) :
+<code>sudo ./photorec_static</code></li>
+	<li>Ensuite on a accès à la liste des périphériques, dans mon cas c'est /dev/sdb qui m'intéresse car il correspond à "Generic Flash Disk", choisissez le matériel ou la partition qui correspond dans votre cas et faites entrée.</li>
+	<li>Ensuite il faut choisir la table de partition. N'ayant aucune partition de reconnue, je choisis "None".</li>
+	<li>Ensuite je choisis la partition qui m'intéresse. (Options et File Opt permettent d'affiner les réglages pour choisir uniquement certains types de fichiers)</li>
+	<li>Ensuite il faut choisir, le système de fichier utilisé, dans mon cas la clé USB utilisait un système FAT</li>
+	<li>Enfin on vous demande le dossier qui servira de sauvegarde. Revenez deux dossiers en arrière grâce aux ".." puis sélectionner votre dossier "sauvegarde", faites entrée puis confirmer avec la touche Y.</li>
+	<li>Le logiciel va maintenant travailler et rechercher tous les fichiers récupérables. Cela peut prendre du temps, pour moi cela à pris un quart d'heure pour récupérer 2,8 Go d'une clé de 4 Go au total.</li>
+	<li>Une fois la restauration terminée, vos fichiers sont disponibles dans plusieurs dossiers "recup_dir" numérotés. Attention cependant, le fait d'avoir lancé la restauration en administrateur ne vous donne pas accès à ses données. Il faut pour cela repasser les droits à votre utilisateur courant.</li>
+	<li>Déplacer vous en ligne de commande dans votre dossier "sauvegarde" avec <code>cd sauvegarde</code> puis exécuter la commande suivante : <code>chown -R antoine:antoine *</code> (remplacez antoine par votre nom d'utilisateur).</li>
+</ul>
+Voilà, vos données sont récupérées ! Il suffit maintenant de remettre de l'ordre car les noms de fichiers seront changés par des nombres et ils seront placés par ordre d'apparition de secteur.</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="installer-cyanogenmod-sur-lhtc-magic.html">← Installer CyanogenMod sur l&#x27;HTC Magic</a><a rel="next" href="firefox-4-meilleure-finition-du-theme-sur-ubuntu.html">Firefox 4 - Meilleure finition du thème sur Ubuntu →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>5</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Tweets that mention Restaurer des données perdues sur une clé USB par exemple « Antoine Turmel -- Topsy.com</strong><time datetime="2011-02-11 16:57:27">11 février 2011</time></header>
+    <div class="comment-body">[...] This post was mentioned on Twitter by Antoine Turmel, Arialia. Arialia said: RT @geekshadow: Restaurer des données perdues sur une clé USB par exemple http://t.co/Js2xgva [...]</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>alex</strong><time datetime="2011-05-20 12:50:03">20 mai 2011</time></header>
+    <div class="comment-body">Grand grand merci. Grâce à vous et à d&#x27;autres, je me suis retiré une bonne épine du pied !!
+
+God bless you !!</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Rob</strong><time datetime="2012-03-12 12:50:23">12 mars 2012</time></header>
+    <div class="comment-body">Excellent, merci beaucoup, j&#x27;ai pu récupérer des données que j&#x27;imaginais perdues ! SUPER, MERCI ENCORE !</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Yann</strong><time datetime="2018-11-22 12:43:32">22 novembre 2018</time></header>
+    <div class="comment-body">Je suis sûr que cela doit fonctionner. Mais je suis débute sous Linux. Pourriez-vous détailler votre article pour les débutant ? dès la première ligne :
+tar xjf testdisk-6.11.3.linux26.tar.bz2
+j&#x27;obtiens : &quot;tar: L&#x27;ancienne option « b » a besoin d&#x27;un argument.
+Pour en savoir davantage, faites : « tar --help » ou « tar --usage ».&quot; et me retrouve bloqué...
+
+Merci d&#x27;avance !</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2019-01-15 16:50:56">15 janvier 2019</time></header>
+    <div class="comment-body">Il faut maintenant utiliser tar xvzf</div>
+  </article>
+  
+</li></ol>
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Restaurer des données perdues sur une clé USB par exemple</footer>
+</body>
+</html>

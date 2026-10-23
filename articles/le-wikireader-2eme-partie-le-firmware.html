@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Note : Cette deuxième partie est un peu plus technique. Le firmware de base du WikiReader ainsi que le Wikipédia intégré est en anglais comme je l&#x27;ai dit précédemment. J&#x27;ai donc regardé le code source pour pouvoir compiler ma propre…">
+    <title>Le WikiReader - 2ème partie : le firmware | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">12 décembre 2009</p>
+    <h1>Le WikiReader - 2ème partie : le firmware</h1>
+    <div class="tag-list"><span class="tag">Logiciels</span> <span class="tag">Matériel</span> <span class="tag">Open Source</span> <span class="tag">Photos</span></div>
+  </header>
+  <div class="post-content"><img class="alignnone" title="WikiReader FR !" src="../assets/images/image-unavailable.svg" alt="" width="120" height="120" />
+
+<em>Note : Cette deuxième partie est un peu plus technique.</em>
+
+Le firmware de base du WikiReader ainsi que le Wikipédia intégré est en anglais comme je l'ai dit précédemment.
+J'ai donc regardé le code source pour pouvoir compiler ma propre version française, du moins le firmware car un membre d'OpenMoko FR compilait déjà Wikipédia et la procédure est <a href="http://freerunner.daily.free.fr/?p=197">beaucoup plus longue</a>.
+
+Tout d'abord il faut préparer son système d'exploitation (de préférence GNU/Linux pour faciliter les choses.)
+J'utilise personnellement Ubuntu 9.10 dans une machine virtuelle.
+<ol>
+	<li>Récupérez les sources (environ 25 Mo) en utilisant Git :
+<blockquote>git clone git://github.com/wikireader/wikireader.git</blockquote>
+</li>
+	<li>Il faut installer les paquets nécessaires à la compilation :
+<blockquote>sudo apt-get install python-gd gawk gforth flex bison m4 netpbm  qt4-qmake libqt4-dev wget python-serial sqlite3 php5-cli python-dev guile-1.8</blockquote>
+</li>
+	<li>Il faut ensuite préciser la plateforme sur laquelle on compile :
+<blockquote><img src="../assets/images/image-unavailable.svg" alt="" /><img src="../assets/images/image-unavailable.svg" alt="" /><img src="../assets/images/image-unavailable.svg" alt="" />cp wikireader/samo-lib/include/config-default.h  wikireader/samo-lib/include/config.h
+gedit wikireader/samo-lib/include/config.h</blockquote>
+(il faut dé-commenter  BOARD_SAMO_V1 qui correspond au modèle WR01, celui du 1er WikiReader)</li>
+	<li>On peut ensuite compiler !
+<blockquote>make all</blockquote>
+</li>
+	<li>Une fois tout compilé, il faut créer un dossier qui recevra les fichiers du firmware du WikiReader.
+<blockquote>mkdir carte_sd</blockquote>
+</li>
+	<li>Puis on va recompiler uniquement les fichiers qui seront sur la carte microSD
+<blockquote>make DESTDIR=carte_sd install</blockquote>
+</li>
+	<li>Et voilà ! Vous devriez avoir une cinquantaine de fichiers dont kernel.elf</li>
+</ol>
+<h4>Traduction française</h4>
+Pour la traduction je me suis penché de plus près au code.
+Dans les sources nous avons un dossier "wiki-app", c'est là ou se trouve le code principal de l'interface.
+
+Parmi ces fichiers, certains contiennent des chaines de caractère à traduire :
+<ul>
+	<li><strong>search.h</strong> pour la partie recherche</li>
+	<li><strong>history.h</strong> et <strong>history.c </strong>pour la partie historique</li>
+	<li><strong>restricted.c </strong>pour la partie mot de passe</li>
+</ul>
+<span style="text-decoration: line-through;">Pour le clavier virtuel AZERTY, j'ai cru qu'il fallait seulement éditer l'image "keyboard_abc_mono2.pbm" seulement elle est déjà générée par défaut dans le fichier "keyboard_all_image.h".
+Il faut donc compiler le firmware avec son image modifiée puis faire un copier-coller du contenu de "keyboard_image.h" dans "keyboard_all_image.h". Il faut aussi penser à modifier les correspondances des touches dans le fichier "keyboard.c"</span>
+
+Edit : Les images en PNG sont utilisables directement, plus de problème !
+
+Pour la configuration AZERTY, je part d'un clavier classique et j'interchange le "M" par le "Backspace" (je n'ai pas modifié les touches numériques et les caractères spéciaux)
+<p style="text-align: center;"><a href="http://www.flickr.com/photos/geekshadow/4172767590/in/photostream"><img class="aligncenter" title="Clavier AZERTY" src="../assets/images/7f7789adcb0bb4f6.jpg" alt="" width="500" height="375" /></a></p>
+<p style="text-align: left;">Concernant la traduction il y a plusieurs limites :</p>
+
+<ul>
+	<li>La taille de l'écran est limité et on ne peut pas changer la taille de police, il faut donc réduire au plus le texte.
+Cependant, dans certains cas comme dans restricted.c ont peut ajouter des lignes.</li>
+	<li>Il m'est impossible pour le moment d'afficher les accents, ils provoquent un bug qui fait répéter deux fois le caractère précédent. Il faut que je re-contacte Open Moko pour savoir comment faire.</li>
+</ul>
+La version française du WikiReader devrait suivre rapidement une fois ce dernier problème réglé.</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="le-wikireader-1ere-partie-le-test.html">← Le WikiReader - 1ère partie : le test</a><a rel="next" href="firmware-du-wikireader-en-francais.html">Firmware du WikiReader en français →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>2</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Goofy</strong><time datetime="2009-12-12 08:29:54">12 décembre 2009</time></header>
+    <div class="comment-body">AAAh, merci GeekShadow pour le bidouillage high-tech. Je ne suis pas loin d&#x27;avoir envie d&#x27;un wiki reader, dès que le contenu wikipédien sera en français toutefois ;-) et probablement qu&#x27;une version à venir va rendre l&#x27;objet plus intéressant encore. Voilà un moment que je me dis qu&#x27;un jour il y aura des handhelds à usage pédagogique dans les classes (voir cet article du framablog http://www.framablog.org/index.php/post/2009/10/14/wikireader-wikipedia-education )</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Edouard</strong><time datetime="2009-12-18 14:20:53">18 décembre 2009</time></header>
+    <div class="comment-body">Aaaaaaaah mais tu gères ! ;)
+Le seul problème pour le moment c&#x27;est que je n&#x27;ai pas de lecteur de cartes SD, je vais vite trouver ça.</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Le WikiReader - 2ème partie : le firmware</footer>
+</body>
+</html>

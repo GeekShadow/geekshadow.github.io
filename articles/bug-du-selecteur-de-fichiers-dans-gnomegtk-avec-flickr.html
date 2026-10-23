@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un truc qui m&#x27;énerve dans Gnome/GTK (utilisateurs Ubuntu notamment), c&#x27;est ce bug qui lorsque l&#x27;on utilise l&#x27;outil d&#x27;import de photos sur Flickr affiche une fenêtre trop grande pour la sélection des fichiers. Concrètement, le site de…">
+    <title>Bug du sélecteur de fichiers dans Gnome/GTK avec Flickr | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">4 avril 2011</p>
+    <h1>Bug du sélecteur de fichiers dans Gnome/GTK avec Flickr</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Logiciel Libre</span> <span class="tag">Open Source</span> <span class="tag">Web</span></div>
+  </header>
+  <div class="post-content">Un truc qui m'énerve dans Gnome/GTK (utilisateurs Ubuntu notamment), c'est ce bug qui lorsque l'on utilise l'outil d'import de photos sur <a href="http://www.flickr.com">Flickr</a> affiche une fenêtre trop grande pour la sélection des fichiers.
+
+Concrètement, le site de Flickr affiche tous les types d'images et de vidéos compatibles qui peuvent être importées, seulement la fenêtre de sélections des fichiers se redimensionne pour afficher tous ces types sur une seule ligne et donc décale aussi les boutons OK et Annuler qui ne sont pas accessibles à moins de déplacer la fenêtre car le redimensionnement est impossible.
+
+<a href="http://www.flickr.com/photos/upload/"><img class="aligncenter size-full wp-image-953" title="capture flickr" src="../assets/images/8318097822219faf.png" alt="capture flickr" width="500" height="303" /></a>
+
+Je suis remonté à la source et c'est donc bel et bien un bug de Gnome/GTK (et non pas le navigateur comme j'ai pu le vérifier).
+Ce <a href="https://bugzilla.gnome.org/show_bug.cgi?id=574450">bug est connu</a> et possède déjà un patch prêt depuis le 14 octobre 2009, mais il n'a toujours pas été inclu !
+
+Vu que c'est plutôt agaçant, j'ai fait un petit script <a href="http://fr.wikipedia.org/wiki/Greasemonkey">Greasemonkey</a> (Compatible Firefox/Chrome) qui permet de contourner le problème en proposant par défaut tous les types de fichiers possibles (en affichant *.*).
+Le script est disponible sur le site <a href="http://userscripts.org/scripts/show/100591">userscripts.org</a>.
+
+Une fois installé, vous pouvez redimensionner la fenêtre et plus de problèmes :)
+
+A noter que Flickr utilise encore un module en Flash pour permettre la sélection multiples de fichiers, alors quel la plupart des navigateurs modernes proposent l'<a href="http://hacks.mozilla.org/2009/12/multiple-file-input-in-firefox-3-6/">envoi multiples de fichiers</a>.
+
+À propos de navigateur, petite piqure de rappel : <a href="http://www.mozilla-europe.org/fr/">Mozilla Firefox 4.0</a> est sorti ! Pensez à mettre à jour votre version ou à le télécharger si vous ne l'utilisez toujours pas !</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="en-vrac-chez-mozilla-et-songbird.html">← En vrac chez Mozilla et Songbird</a><a rel="next" href="mon-test-de-la-nintendo-3ds.html">Mon test de la Nintendo 3DS →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>3</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>caméléon</strong><time datetime="2011-04-05 09:33:30">5 avril 2011</time></header>
+    <div class="comment-body">Merci pour le lien vers le bug, je l&#x27;avais aussi constaté et c&#x27;est assez enervant...</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Arnaud Palisson</strong><time datetime="2011-04-05 13:18:52">5 avril 2011</time></header>
+    <div class="comment-body">Bonjour,
+Oui, en effet, je peste régulièrement contre ce bug.
+Merci pour ce script que je m&#x27;en vais installer une fois revenu sur mon ordi perso. Parce qu&#x27;au boulot, ben, Windaube rules.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Jean</strong><time datetime="2011-04-05 20:36:05">5 avril 2011</time></header>
+    <div class="comment-body">J&#x27;avais coonstaté et j&#x27;ai contourné en utilisant juploUnadr
+http://juploadr.org/
+un petit progrramme de d&#x27;upload en java.</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Bug du sélecteur de fichiers dans Gnome/GTK avec Flickr</footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="42registry.org propose depuis quelque temps l&#x27;enregistrement de nom de domaines en .42 Ce domaine TLD vise principalement le monde du libre, scientifique et des technologies en excluant l&#x27;aspect industriel. Nous tenons à réunir sous le TLD…">
+    <title>Nom de domaine en .42 | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">20 décembre 2010</p>
+    <h1>Nom de domaine en .42</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Open Source</span> <span class="tag">Tutoriels</span> <span class="tag">Web</span></div>
+  </header>
+  <div class="post-content"><a href="http://register.42registry.org/">42registry.org</a> propose depuis quelque temps l'enregistrement de nom de domaines en .42
+Ce domaine TLD vise principalement le monde du libre, scientifique et des technologies en excluant l'aspect industriel.<img class="alignright size-full wp-image-836" title="42" src="../assets/images/4e93842a9cc2a27a.png" alt="" width="169" height="179" />
+<blockquote>Nous tenons à réunir sous le TLD .42 non seulement les libristes, mais  plus globalement tout ce qui a trait aux domaines scientifiques, en  excluant l'aspect industriel.
+Projets de recherche, logiciels libres,  sites communautaires scientifiques, nouvelles technologies : ce sont  les sujets que nous voulons retrouver derrière chaque domaine en .42.  L'objectif étant qu'un utilisateur visitant un site muni de ce TLD ait  la garantie de trouver un contenu constructif.</blockquote>
+L'enregistrement d'un domaine est gratuit et peut être financé par des donations.
+
+Une fois votre nom de domaine enregistré et paramétré voici un petit tutoriel pour pouvoir y accéder sur votre ordinateur. (Tutoriel pour Ubuntu/Debian)
+
+<strong>Edit</strong> : une manière plus simple consiste à ajouter les DNS dans sa configuration :
+
+Il suffit d’éditer le fichier /etc/dhcp3/dhclient.conf et d’y ajouter la ligne :
+
+<code>prepend domain-name-servers 81.93.248.69, 81.93.248.68, 91.194.60.196, 193.17.192.53;</code>
+
+Il sera nécessaire enfin de redémarrer le PC ou de simplement couper/relancer la connexion. --<strong>Matthour</strong>
+<ol>
+	<li>Installez bind : <code>sudo apt-get install bind9</code></li>
+	<li>Éditez le fichier de configuration : <code>sudo vi /etc/bind/named.conf</code></li>
+	<li>Ajoutez à la fin :
+<code>zone "42" IN {
+type forward;
+forwarders {91.191.147.246; 91.191.147.243;};
+};</code></li>
+	<li>Éditez le fichier de configuration : <code>sudo vi /etc/resolv.conf</code></li>
+	<li>Remplacez l'adresse IP par celle du localhost 127.0.0.1</li>
+	<li>Redémarrez Bind9 : <code>sudo /etc/init.d/bind9 restart</code></li>
+	<li>Ça marche ! Vous avez désormais accès au nom de domaines en .42</li>
+</ol>
+On peut noter que WikiLeaks dispose déjà d'un <a href="http://wikileaks.42/">domaine .42</a>, le mien est <a href="http://antoine.42/">antoine.42</a>.
+
+Plus d'informations sur le site officiel : <a href="http://register.42registry.org/">http://register.42registry.org</a>
+
+Source : <a href="http://pistaches.net/~pistache/stuff/42/resolver-setup.html">Pistaches.net</a>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 237px; width: 1px; height: 1px; overflow: hidden;"><span class="gravatar"><img class="avatar avatar-32 photo" src="../assets/images/13117cb04ec5b127.png" alt="" width="32" height="32" /> </span> <span class="comment-author">MatthourM</span></div></div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="bouton-firefox-4-0-sur-linux.html">← Bouton Firefox 4.0 sur Linux</a><a rel="next" href="les-trucs-bien-de-2011.html">Les trucs bien de 2011 →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>3</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Toto</strong><time datetime="2011-01-04 08:33:57">4 janvier 2011</time></header>
+    <div class="comment-body">Salut, 
+j&#x27;ai suivi ton tuto mais rien à y faire je n&#x27;arrive toujours pas à me connecter au .42... Je suis sous buntu 10.10 tu pourrais me filer un coup de main? Merci.
+
+http://forum.ubuntu-fr.org/viewtopic.php?id=436454</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Matthour</strong><time datetime="2011-01-05 21:26:02">5 janvier 2011</time></header>
+    <div class="comment-body">Un autre moyen plus simple et sans rien installer (pour Ubuntu) :
+
+Il suffit d&#x27;éditer le fichier /etc/dhcp3/dhclient.conf et d&#x27;y ajouter la ligne :
+
+prepend domain-name-servers 81.93.248.69, 81.93.248.68, 91.194.60.196, 193.17.192.53;
+
+Il sera nécessaire enfin de redémarrer le PC ou de simplement couper/relancer la connexion.</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2011-01-05 22:15:24">5 janvier 2011</time></header>
+    <div class="comment-body">Ajouté ! Merci :)</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Nom de domaine en .42</footer>
+</body>
+</html>

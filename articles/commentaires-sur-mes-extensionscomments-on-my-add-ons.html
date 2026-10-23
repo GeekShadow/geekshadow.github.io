@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Depuis que POTI à décidé de fermer les commentaires sur la plateforme d&#x27;extensions suite à un problème de spam, je vous invite à publier vos commentaires sur cet article concernant n&#x27;importe quelle de mes extensions. Vous pouvez aussi…">
+    <title>Commentaires sur mes extensions|Comments on my add-ons | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">31 juillet 2011</p>
+    <h1>Commentaires sur mes extensions|Comments on my add-ons</h1>
+    <div class="tag-list"><span class="tag">En bref</span> <span class="tag">Général</span> <span class="tag">Logiciel Libre</span> <span class="tag">Open Source</span> <span class="tag">Projets</span></div>
+  </header>
+  <div class="post-content"><span lang="fr">Depuis que <a href="http://blog.songbirdnest.com/2011/07/21/eatin-spam/">POTI à décidé de fermer les commentaires</a> sur la <a href="http://addons.songbirdnest.com">plateforme d'extensions</a> suite à un problème de spam, je vous invite à publier vos commentaires sur cet article concernant n'importe quelle de <a href="http://addons.songbirdnest.com/search?query=geekshadow">mes extensions</a>. Vous pouvez aussi rapporter différents problèmes sur les pages Google Code dédiées :</span>
+<span lang="en">Since <a href="http://blog.songbirdnest.com/2011/07/21/eatin-spam/">POTI decided to close comments</a> on the <a href="http://addons.songbirdnest.com/">add-ons platform</a> because of spam flood, I invite you to post comments on this article about any of <a href="http://addons.songbirdnest.com/search?query=geekshadow">my add-ons</a>. You can also report issues on the dedicated Google Code pages :</span>
+<ul>
+	<li><a href="http://code.google.com/p/songbird-birdquizz/">BirdQuizz</a></li>
+	<li><a href="http://code.google.com/p/songbird-livetweeter/">LiveTweeter</a></li>
+	<li><a href="http://code.google.com/p/songbird-samplerbox/">SamplerBox</a></li>
+	<li><a href="http://code.google.com/p/songbird-ubiquity/">Ubiquity Songbird</a></li>
+	<li><a href="http://code.google.com/p/songbird-othersaddons/">Autres extensions - Others add-ons</a></li>
+</ul>
+<span lang="fr">Merci et en espérant que POTI trouve une solution rapidement pour ré-ouvrir les commentaires.</span>
+<span lang="en">Thanks, and hopes for POTI to quickly find a solution to reopen comments.</span></div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="bilan-des-rmll-et-after.html">← Bilan des RMLL et after</a><a rel="next" href="osm-b2g-ngale-omg.html">OSM, B2G, NGale, OMG →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>12</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Steve</strong><time datetime="2011-08-31 17:38:47">31 août 2011</time></header>
+    <div class="comment-body">It doesnt seem to be updating my twitter account automatically. I have to click the icon and choose to tweet the track.</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2011-08-31 17:41:26">31 août 2011</time></header>
+    <div class="comment-body">It&#x27;s because it use the website and not the OAuth protocol.</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Marcos</strong><time datetime="2011-09-20 15:30:35">20 septembre 2011</time></header>
+    <div class="comment-body">Great tool!!
+Thanks to put back again! 
+
+Cheers from Brazil!!</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Fabian</strong><time datetime="2012-01-04 01:24:11">4 janvier 2012</time></header>
+    <div class="comment-body">Hi Antoine,
+I have a recommendation for your Songbird Command Line Support addon. It did not work for me on Songbird 1.10.1, Build 2160 using Windows 7 x86. However when I change your script from:
+================================================================
+if (typeof(Cc) == &quot;undefined&quot;)
+    var Cc = Components.classes;
+if (typeof(Ci) == &quot;undefined&quot;)
+    var Ci = Components.interfaces;
+var gMM = Cc[&quot;@songbirdnest.com/Songbird/Mediacore/Manager;1&quot;]
+                .getService(Ci.sbIMediacoreManager);
+================================================================
+
+to simply:
+================================================================
+var gMM = Components.classes[&quot;@songbirdnest.com/Songbird/Mediacore/Manager;1&quot;].getService(Components.interfaces.sbIMediacoreManager);
+================================================================
+
+it works like a charm - don&#x27;t know if its due to the linebreak or something else.. would be great if you could look into it and push out an update for other users experiencing this issue (or maybe it&#x27;s just me? :))
+
+best regards,
+Fabian</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2012-01-04 01:27:59">4 janvier 2012</time></header>
+    <div class="comment-body">I&#x27;m mostly following :
+https://developer.mozilla.org/En/Mozilla_Coding_Style_Guide#Line_length
+
+and most of Songbird add-ons/core use Cc/Ci ;)</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Ice</strong><time datetime="2012-02-14 22:38:32">14 février 2012</time></header>
+    <div class="comment-body">Hey im not sure how fasterbird works, does it automatically work when i download it? thanks!</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Ice</strong><time datetime="2012-02-15 21:43:56">15 février 2012</time></header>
+    <div class="comment-body">plzzzz</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2012-02-17 16:47:31">17 février 2012</time></header>
+    <div class="comment-body">After you install it, it should work.</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>gtwrestler88</strong><time datetime="2012-03-26 02:44:43">26 mars 2012</time></header>
+    <div class="comment-body">how do i download POTIfy??? the download button is like blank?</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Mike</strong><time datetime="2012-07-11 12:23:08">11 juillet 2012</time></header>
+    <div class="comment-body">FireTorrent seems like a great idea. Normally I am computer literate, too. But I try to open .torrent files in Songbird magnetically and can&#x27;t find Firetorrent in the apps list to open the torrent with. Also if I save the .torrent file, it just downloads it and doesn&#x27;t open it like a normal bit torrent client. 
+
+Is there something I&#x27;m missing?, how do I get this to work?, sorry to ask such a stupid question. I want to write an article about this extension but I need success first!.</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2012-07-11 12:33:02">11 juillet 2012</time></header>
+    <div class="comment-body">Once FireTorrent installed, .torrent are downloaded using the default Download Manager, but instead of downloading the .torrent it downloads the content of torrent in a folder :)</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Yaroslav Krytsun</strong><time datetime="2012-11-24 06:26:54">24 novembre 2012</time></header>
+    <div class="comment-body">Would you please update maxVersion of Equalizer Presets to make it compatible with Sonbird 2.*?</div>
+  </article>
+  
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Commentaires sur mes extensions|Comments on my add-ons</footer>
+</body>
+</html>

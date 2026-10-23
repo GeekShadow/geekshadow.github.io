@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il y a quelques mois, mon frère m&#x27;a donné son ancienne carte mère et l&#x27;a installé dans mon boitier. Tout fonctionnais très bien sous Ubuntu, sauf les prises audios en façade (à savoir le Jack 3.5 vert et rose). J&#x27;ai décidé de me coller à…">
+    <title>Activer les prises audios du front panel sur Ubuntu | Antoine Turmel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Antoine Turmel<span> / archives</span></a>
+    <a class="header-link" href="../index.html">Tous les articles</a>
+  </header>
+  <main id="contenu"><article class="post">
+  <header class="post-header">
+    <a class="back-link" href="../index.html">← Retour aux archives</a>
+    <p class="eyebrow">6 septembre 2015</p>
+    <h1>Activer les prises audios du front panel sur Ubuntu</h1>
+    <div class="tag-list"><span class="tag">Général</span> <span class="tag">Tutoriels</span></div>
+  </header>
+  <div class="post-content">Il y a quelques mois, mon frère m'a donné son ancienne carte mère et l'a installé dans mon boitier.
+Tout fonctionnais très bien sous Ubuntu, sauf les prises audios en façade (à savoir le Jack 3.5 vert et rose). J'ai décidé de me coller à ce problème.
+<ol>
+ 	<li>Vérifions d'abord la carte mère (EVGAP55 SLI-E655-KR), le connecteur CFPA (Control Front Panel Audio) est bien présent et connecté ;
+
+[caption id="attachment_3639" align="alignright" width="199"]<a href="../assets/images/1a04f42d7e18e898.png"><img class="wp-image-3639 size-full" src="../assets/images/1a04f42d7e18e898.png" alt="cfpa" width="199" height="379" /></a> Connecteur CFPA[/caption]</li>
+ 	<li>Allons dans le BIOS, ici pas de mention de front panel audio, juste "HD Audio" activé ou non pour l'ensemble du chipset audio ;</li>
+ 	<li>Le problème ne semble pas matériel et après quelques recherches je découvre l'utilitaire hdajackretask qui permet de réassigner les prises jacks sur du matériel Intel HDA ;</li>
+ 	<li>Installons donc cet utilitaire ainsi qu'alsamixer : sudo apt-get install alsa-utils alsa-tools alsa-tools-gui ;</li>
+ 	<li>Lançons le : sudo hdajackretask (Il est aussi présent dans le menu Applications -&gt; Son et vidéo) ;</li>
+ 	<li>Pour le micro (Jack rose) : je coche Override pour "Pink Mic, Front Side, Pin ID: 0x19" ;</li>
+ 	<li>Pour le casque (Jack vert) : je coche Override pour "Green Line Out, Front Side, Pin ID: 0x1b" et je sélectionne "Headphone" ;</li>
+ 	<li>Le bouton "Apply now" ne fonctionnant pas, je clique sur "Install boot override" et redémarre Ubuntu ;</li>
+ 	<li>Un léger son de grésillement se fait entendre au redémarrage, le casque fonctionne sur la prise !</li>
+ 	<li>Je démarre alsamixer et ajuste le son de "Headphone" pour le mettre au maximum et appuie sur la touche "M" pour désactiver la sourdine.</li>
+ 	<li>Il est possible d'enregistrer les paramètres en utilisant la commande : alsactl --file ~/.config/asound.state store</li>
+ 	<li>Puis de la restaurer au démarrage avec : alsactl --file ~/.config/asound.state restore</li>
+</ol>
+<a href="../assets/images/fa8702175e1fa46e.png"><img class="size-medium wp-image-3644" src="../assets/images/2d7fa1760341a8b4.png" alt="Configuration hdajackretask" width="240" height="500" /></a> <a href="../assets/images/9432bd5bba8f1aec.png"><img class="alignnone wp-image-3646 size-medium" src="../assets/images/a3e89738d71d4c73.png" alt="alsamixer" width="500" height="297" /></a>
+Voilà, en espérant que ce tutoriel vous aura aidé à activer le Front Panel Audio, bien entendu la configuration des Pins peut changer selon le modèle de votre carte mère.</div>
+  <nav class="post-nav" aria-label="Navigation entre les articles"><a rel="prev" href="en-vrac-aout-15.html">← En vrac</a><a rel="next" href="jai-essaye-la-nintendo-switch.html">J&#x27;ai essayé la Nintendo Switch ! →</a></nav>
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Commentaires <span>6</span></h2>
+    <ol class="comment-list"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Vincent</strong><time datetime="2015-09-06 19:36:41">6 septembre 2015</time></header>
+    <div class="comment-body">Une raison particulière de ne pas utiliser la sortie Jack ?</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2015-09-06 21:34:55">6 septembre 2015</time></header>
+    <div class="comment-body">Je ne comprends pas ta question...</div>
+  </article>
+  
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Vincent</strong><time datetime="2015-09-08 15:15:34">8 septembre 2015</time></header>
+    <div class="comment-body">La prise Jack avait un défaut matériel ? Tu as pu voir si c&#x27;était un soucis de pilote par exemple ?</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2015-09-08 15:24:19">8 septembre 2015</time></header>
+    <div class="comment-body">Non pas un défaut matériel, je dirais plus le pilote... mais bon rien trouvé de satisfaisant mis à part cette solution :)</div>
+  </article>
+  
+</li></ol>
+</li><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>ppr</strong><time datetime="2016-08-17 15:00:58">17 août 2016</time></header>
+    <div class="comment-body">Bonjour,
+
+A force de recherche pour avoir du son sur un vieux laptop je suis tombé ici :-)
+J&#x27;ai donc réinstallé Ubuntu 16.04 LTS en 32 Bits, fait les mises à jour et suivi le &quot;tuto&quot; :
+  sudo apt-get install alsa-utils alsa-tools alsa-tools-gui
+  sudo hdajackretask
+A défaut d&#x27;avoir du son sur les haut-parleurs du laptop, j&#x27;ai au moins du son qui passe par la prise casque \o/
+Je bidouillerai pour essayer de voir si il y a moyen d&#x27;avoir ET la sortie son sur la prise casque ET du son dans les haut-parleurs.
+Bref, merci pour l&#x27;astuce du &quot;sudo hdajackretask&quot; :-) car a priori les pilotes ACL880 HD Realtek ne fonctionneraient que sur kernel 2.6 ou 3.0, ou bien alors je n&#x27;ai pas trouvé/su comment faire pour installer/compiler tout ça sur un kernel 4.* :-(
+
+ppr</div>
+  </article>
+  <ol class="comment-replies"><li class="comment">
+  <article>
+    <header class="comment-meta"><strong>Antoine</strong><time datetime="2016-08-24 11:13:37">24 août 2016</time></header>
+    <div class="comment-body">Cool, normalement tu peux bidouiller pour avoir le son et sur la prise casque et sur la sortie classique, il faut tâtonner, hdajackretask n&#x27;est pas forcément simple à utiliser.
+Pour les pilotes pareil il faut chercher, normalement ça se trouve assez facilement, pour la compilation c&#x27;est un poil plus compliqué, mais c&#x27;est généralement bien documenté.</div>
+  </article>
+  
+</li></ol>
+</li></ol>
+  </section>
+</article></main>
+    <footer class="site-footer">Archive personnelle · Activer les prises audios du front panel sur Ubuntu</footer>
+</body>
+</html>
